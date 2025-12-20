@@ -1,4 +1,5 @@
 import React from "react";
+import FormInput from "./cta/FormInput";
 
 const CTASection: React.FC = () => {
   return (
@@ -20,32 +21,18 @@ const CTASection: React.FC = () => {
           Faster mornings <br />
           <span className="text-gray-500">start here.</span>
         </h2>
-        
+
         <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-xl mx-auto font-light leading-relaxed">
           Fresh coffee, first access, and <span className="text-primary font-medium">10% off</span> your first bag. No clutter, just high-octane fuel.
         </p>
 
         <form className="max-w-lg mx-auto space-y-4" onSubmit={(e) => e.preventDefault()}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="relative">
-              <input 
-                type="text" 
-                placeholder="First Name" 
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all hover:bg-white/10"
-                required
-              />
-            </div>
-            <div className="relative">
-              <input 
-                type="email" 
-                placeholder="Email Address" 
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all hover:bg-white/10"
-                required
-              />
-            </div>
+            <FormInput type="text" placeholder="First Name" required />
+            <FormInput type="email" placeholder="Email Address" required />
           </div>
-          
-          <button 
+
+          <button
             type="submit"
             className="w-full bg-primary text-black font-bold text-lg rounded-2xl px-8 py-4 hover:bg-lime-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-[0_0_20px_rgba(163,230,53,0.2)] flex items-center justify-center gap-2 group"
           >
