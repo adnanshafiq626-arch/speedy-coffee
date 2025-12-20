@@ -1,9 +1,7 @@
 import React from "react";
 import Marquee from "./Marquee";
-import Navbar from "./hero/Navbar";
 import ProductCard from "./hero/ProductCard";
 import { products } from "../data/productData";
-
 const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-bg-hero dark:bg-bg-hero-dark text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans min-h-screen flex flex-col overflow-hidden pb-24">
@@ -16,9 +14,6 @@ const HeroSection: React.FC = () => {
           backgroundSize: "40px 40px",
         }}
       />
-
-      {/* Floating Navbar */}
-      <Navbar />
 
       {/* Marquee Banner */}
       <div className="mt-28 w-full bg-primary text-black py-2 font-mono text-xs sm:text-sm font-bold tracking-widest uppercase overflow-hidden border-y border-lime-600 relative z-10 rotate-1 transform scale-105 origin-center shadow-lg">
