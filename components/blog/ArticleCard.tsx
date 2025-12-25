@@ -14,12 +14,22 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
         >
             {/* Featured Image */}
             <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-900">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="material-icons-outlined text-6xl text-gray-400 dark:text-gray-600">
-                        article
-                    </span>
-                </div>
+                {article.featuredImage ? (
+                    <img
+                        src={article.featuredImage}
+                        alt={article.title}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                ) : (
+                    <>
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-500" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="material-icons-outlined text-6xl text-gray-400 dark:text-gray-600">
+                                article
+                            </span>
+                        </div>
+                    </>
+                )}
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
                     <span className="bg-primary text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">

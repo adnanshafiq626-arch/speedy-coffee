@@ -21,11 +21,21 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ articles }) => {
                         to={`/blog/${article.slug}`}
                         className="group block bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-all duration-300"
                     >
-                        {/* Image Placeholder */}
-                        <div className="relative aspect-[16/9] bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                            <span className="material-icons-outlined text-4xl text-gray-400 dark:text-gray-600">
-                                article
-                            </span>
+                        {/* Featured Image */}
+                        <div className="relative aspect-[16/9] bg-gray-100 dark:bg-gray-900 overflow-hidden">
+                            {article.featuredImage ? (
+                                <img
+                                    src={article.featuredImage}
+                                    alt={article.title}
+                                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                            ) : (
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                                    <span className="material-icons-outlined text-4xl text-gray-400 dark:text-gray-600">
+                                        article
+                                    </span>
+                                </div>
+                            )}
                             <div className="absolute top-3 left-3">
                                 <span className="bg-primary text-black px-2 py-1 rounded-full text-xs font-bold uppercase">
                                     {article.category}
