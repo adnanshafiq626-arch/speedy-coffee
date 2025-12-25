@@ -135,14 +135,11 @@ const ArticlePage: React.FC = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                                 {/* Main Content */}
                                 <div className="lg:col-span-8">
-                                    {/* Featured Image */}
-                                    <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-900 mb-12">
-                                        <img
-                                            src={article.featuredImage}
-                                            alt={article.title}
-                                            className="absolute inset-0 w-full h-full object-cover"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                                    {/* Featured Image Placeholder */}
+                                    <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 mb-12 flex items-center justify-center">
+                                        <span className="material-icons-outlined text-8xl text-gray-400 dark:text-gray-600">
+                                            image
+                                        </span>
                                     </div>
 
                                     {/* Article Body */}
